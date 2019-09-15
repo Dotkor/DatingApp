@@ -8,19 +8,19 @@
         <div class="form-group">
           <label for="minAge">Age From</label>
           <input type="number" class="form-control ml-1" style="width: 70px" id="minAge"
-          [(ngModel)]="userParams.minAge" name="minAge">
+          ngDefaultControl [(ngModel)]="userParams.minAge" name="minAge">
         </div>
       
         <div class="form-group px-2">
           <label for="maxAge">Age To</label>
           <input type="number" class="form-control ml-1" style="width: 70px" id="maxAge"
-          [(ngModel)]="userParams.maxAge" name="maxAge">
+          ngDefaultControl [(ngModel)]="userParams.maxAge" name="maxAge">
         </div>
       
         <div class="form-group px-2">
           <label for="gender">Show: </label>
           <select class="form-control ml-1" style="width: 130px" id="gender"
-          [(ngModel)]="userParams.gender" name="gender">
+          ngDefaultControl [(ngModel)]="userParams.gender" name="gender">
             <option *ngFor="let gender of genderList" [value]="gender.value">
               {{gender.display}}
             </option>
@@ -34,14 +34,14 @@
               <button type="button" name="orderBy" (click)="loadUsers()" class="btn btn-primary"
               [(ngModel)]="userParams.orderBy" btnRadio="lastActive">Last Active</button>
               <button type="button" name="orderBy" (click)="loadUsers()" class="btn btn-primary"
-              [(ngModel)]="userParams.orderBy" btnRadio="orderBy">Newest Members</button>
+              [(ngModel)]="userParams.orderBy" btnRadio="created">Newest Members</button>
             </div>
         </div> -->
       </form>
       <br>
   <div class="row">
     <div *ngFor="let user of users" class="col-lg-2 col-md3 com-sm-6">
-      <app-member-card [user]="user"></app-member-card>
+      <app-member-card ngDefaultControl [user]="user"></app-member-card>
     </div>
   </div>
 </div>
