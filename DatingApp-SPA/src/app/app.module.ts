@@ -61,6 +61,7 @@ export function tokenGetter() {
    ],
    imports: [
       BrowserModule,
+      FormsModule,
       BrowserAnimationsModule,
       HttpClientModule,
       FormsModule,

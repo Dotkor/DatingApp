@@ -1,13 +1,13 @@
 <div class="container mt-5">
   <div class="row">
     <div class="btn-group">
-      <button class="btn btn-primary" name="Unread" registerOnChange [(ngModel)]="messageContainer" btnRadio="Unread" (click)="loadMessages()">
+      <button class="btn btn-primary" name="Unread" btnRadio="Unread" (click)="loadMessages('Unread')">
         <i class="fa fa-envelope"></i> Unread
       </button>
-      <button class="btn btn-primary" name="Inbox" registerOnChange [(ngModel)]="messageContainer" btnRadio="Inbox" (click)="loadMessages()">
+      <button class="btn btn-primary" name="Inbox"  btnRadio="Inbox" (click)="loadMessages('Inbox')">
         <i class="fa fa-envelope-open"></i> Inbox
       </button>
-      <button class="btn btn-primary" name="Outbox" registerOnChange [(ngModel)]="messageContainer" btnRadio="Outbox" (click)="loadMessages()">
+      <button class="btn btn-primary" name="Outbox" btnRadio="Outbox" (click)="loadMessages('Outbox')">
         <i class="fa fa-paper-plane"></i> Outbox
       </button>
     </div>
@@ -17,7 +17,7 @@
     <h3>No messages</h3>
   </div>
 
-  <div class="row" name="fieldName" ngDefaultControl *ngIf="messages.length > 0">
+  <div class="row" *ngIf="messages.length > 0">
     <table class="table table-hover" style="cursor: pointer">
       <tr>
         <th style="width: 40%">Message</th>
